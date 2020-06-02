@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__heading">
+            <i class="fas fa-calculator primary-color"></i> Kalkulator <span>BMR</span></h1>
+    </header>
+    <main class="main">
+        <section class="section section--form">
+            <form class="form">
+                <div class="form__group">
+                    <div class="form__group__title">
+                        <label for="calculationMethod" class="form__label">Oblicznie zapotrzebowania kalorycznego metodą:</label>  
+                    </div>
+                    <div class="form__group__content">
+                        <select name="calculationMethod" id="calculationMethod" class="form__input form__input--select">
+                            <option value="0">Harrisa-Benedicta</option>
+                            <option value="1">Mifflin-St Jeor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__group__title">
+                        Płeć:
+                    </div>
+                    <div class="form__group__content">
+                        <input type="radio" name="gender" id="female" value="female" class="form__input form__input--radio" checked>
+                        <label for="female" class="form__label" aria-label="Kobieta"></label>
+                        <input type="radio" name="gender" id="male" value="male" class="form__input form__input--radio">
+                        <label for="male" class="form__label" aria-label="Mężczyzna"></label>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__group__title">
+                       <label for="age" class="form__label">Wiek:</label>
+                    </div>
+                    <div class="error error--age">To pole nie może być puste</div>
+                    <div class="form__group__content">
+                        <input type="number" name="age" id="age" value="" class="form__input">
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__group__title">
+                       <label for="weight" class="form__label">Waga:</label>
+                    </div>
+                    <div class="error error--weight">To pole nie może być puste</div>
+                    <div class="form__group__content">
+                        <input type="number" name="weight" id="weight" value="" class="form__input"> <span class="unit">kg</span>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__group__title">
+                       <label for="growth" class="form__label">Wzrost:</label>
+                    </div>
+                    <div class="error error--growth">To pole nie może być puste</div>
+                    <div class="form__group__content">
+                        <input type="number" name="growth" id="growth" value="" class="form__input"> <span class="unit">cm</span> 
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__group__title">
+                       <label for="activity" class="form__label">Stopień aktywności:</label>
+                    </div>
+                    <div class="error error--activity">To pole nie może być puste</div>
+                    <div class="form__group__content">
+                        <select name="activity" id="activity" class="form__input form__input--select">
+                            <option value="0">-- wybierz --</option>
+                            <option value="1">leżący lub siedzący tryb życia, brak jakiejkolwiek aktywności fizycznej</option>
+                            <option value="2">praca siedząca, niska aktywność fizyczna</option>
+                            <option value="3">praca siedząca, średnia aktywność fizyczna</option>
+                            <option value="4">lekka praca fizyczna, wysoka aktywność fizyczna (trening około 3 razy w tygodniu)</option>
+                            <option value="5">praca fizyczna, bardzo wysoka aktywność fizyczna (trening 4-5 razy w tygodniu)</option>
+                            <option value="6">ciężka praca fizyczna, codzienny trening</option>
+                            <option value="7">współczynnik raczej dla sportowców wyczynowych</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn--calculate" data-calculate-bmr>Oblicz BMR</button>
+            </form>
+        </section>
+
+        <section class="section section--output">
+            <div data-output-bmr>
+
+            </div>
+            <div class="canvas__container">
+                <canvas data-output-chart></canvas>
+                <div class="legendChart" data-legend-chart></div>
+            </div>
+        </section>
+        <section class="section section--output">
+            <div data-output-bmr-down>
+
+            </div>
+            <div class="canvas__container">
+                <canvas data-output-chart-down></canvas>
+                <div class="legendChart" data-legend-chart-down></div>
+            </div>
+        </section>
+        <section class="section section--output">
+            <div data-output-bmr-up>
+
+            </div>
+            <div class="canvas__container">
+                <canvas data-output-chart-up></canvas>
+                <div class="legendChart" data-legend-chart-up></div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        const calculator = new CalculatorBMR();
+        calculator.initialize();
+    </script>
+</body>
+</html>

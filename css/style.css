@@ -1,0 +1,228 @@
+:root {
+    --priamry-color: #0079a1;
+    --error-color: #FF9494;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    background: #f4f4f4;
+}
+
+.primary-color {
+    color: var(--priamry-color);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.header__heading {
+    color: #000;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+}
+
+.header__heading span {
+    color: var(--priamry-color);
+    font-weight: 700;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.section {
+    align-self: center;
+    width: 600px;
+}
+
+.section--output {
+    display: flex;
+    width: 600px;
+    padding: 30px 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    border: 1px solid var(--priamry-color);
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.form__group__title {
+    width: 80%;
+}
+
+.form__group__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.unit {
+    color: var(--priamry-color);
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.form__label {
+    font-size: 18px;
+    color: #292929;
+}
+
+.form__input {
+    width: 95%;
+    height: 35px;
+    color: var(--priamry-color);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid var(--priamry-color);
+    margin: 5px 0;
+}
+
+.form__input--radio {
+    position: relative;
+    display: block;
+    width: 47.5%;
+    background-image: none;
+    line-height: 35px;
+    color: var(--priamry-color);
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+#female::after {
+    content: 'Kobieta';
+}
+
+#male::after {
+    content: 'Mężczyzna';
+}
+
+.form__input--radio:checked {
+    background: var(--priamry-color);
+    color: #fff;
+}
+
+
+.btn {
+    display: block;
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    font-weight: 700;
+    border: 0;
+    background: var(--priamry-color);
+    cursor: pointer;
+}
+
+.error {
+    color: var(--error-color);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.error--age,
+.error--weight,
+.error--growth,
+.error--activity {
+    display: none;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+
+.result__heading {
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+
+.result__subheading {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 0 5px;    
+}
+
+.result__reultText {
+    color: var(--priamry-color);
+    font-size: 42px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+.macronutrients__list {
+    list-style: none;
+    margin: 5px 0;
+    padding: 0;
+}
+
+.macronutrients__item {
+    font-weight: 700;
+}
+
+.canvas__container{
+    padding-top: 20px;
+}
+
+.legendChart {
+    height: 62px;
+    width: 100%;
+    bottom: 10%;
+    overflow-y: auto;
+}
+
+.legendChart>ul {
+    padding: 0;
+    text-align: center;
+}
+
+.legendChart li {
+    margin: 4px 3px;
+    display: inline-table;
+}
+
+.legendChart li span {
+    position: relative;
+    padding: 3px 10px;
+    border-radius: 13px;
+    color: white;
+    z-index: 2;
+    font-size: 11px;
+}
+
+.donut-area {
+    height: calc(100% - 62px)
+}
+
